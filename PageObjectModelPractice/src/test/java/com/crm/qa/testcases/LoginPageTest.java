@@ -1,7 +1,9 @@
 package com.crm.qa.testcases;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -20,7 +22,7 @@ public class LoginPageTest extends Testbase{
 	}
 	
 	
-	@BeforeTest
+	@BeforeMethod
 	public void setup()
 	{
 		initialization();
@@ -51,7 +53,7 @@ public class LoginPageTest extends Testbase{
 		
 	}
 	
-	@AfterTest
+	@AfterMethod
 	public void tearDown() {
 		driver.quit();
 	}
