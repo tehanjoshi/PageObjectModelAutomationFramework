@@ -29,7 +29,9 @@ public class Testbase {
 	public Testbase() {
 		properties = new Properties();
 		try {
-			FileInputStream fileInputStream = new FileInputStream("C:\\Users\\ADMIN\\NewEclipseWorkspace\\PageObjectModelPractice\\src\\main\\java\\com\\crm\\qa\\config\\config.properties");
+			//FileInputStream fileInputStream = new FileInputStream("C:\\Users\\ADMIN\\NewEclipseWorkspace\\PageObjectModelPractice\\src\\main\\java\\com\\crm\\qa\\config\\config.properties");
+			FileInputStream fileInputStream = new FileInputStream(System.getProperty("user.dir")+ "/src/main/java/com/crm"
+					+ "/qa/config/config.properties");
 			properties.load(fileInputStream);
 		} 
 
