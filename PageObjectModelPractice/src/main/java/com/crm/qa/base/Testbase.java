@@ -19,6 +19,8 @@ import org.openqa.selenium.support.events.WebDriverEventListener;
 import com.crm.qa.util.TestUtil;
 import com.crm.qa.util.WebEventListener;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class Testbase {
 	
 	public static WebDriver driver;
@@ -55,13 +57,19 @@ public class Testbase {
 		String browserString = properties.getProperty("browser");
 		if(browserString.equals("chrome"))
 		{
-			System.setProperty("webdriver.chrome.driver", "F:\\FromDesktop\\Selenium\\Selenium\\Rahul shetty\\chromedriver_win32_v83\\chromedriver.exe");
+			//System.setProperty("webdriver.chrome.driver", "F:\\FromDesktop\\Selenium\\Selenium\\Rahul shetty\\chromedriver_win32_v83\\chromedriver.exe");
+			
+			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
+			
+			
+			
 		}
 		else if(browserString.equals("firefox"))
 		{	
 			//C:\Users\ADMIN\Desktop\Selenium\Rahul shetty\geckodriver-v0.26.0-win64
-			System.setProperty("webdriver.gecko.driver", "F:\\FromDesktop\\Selenium\\Selenium\\Rahul shetty\\geckodriver-v0.26.0-win64\\geckodriver.exe");
+			//System.setProperty("webdriver.gecko.driver", "F:\\FromDesktop\\Selenium\\Selenium\\Rahul shetty\\geckodriver-v0.26.0-win64\\geckodriver.exe");
+			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
 		}
 		
